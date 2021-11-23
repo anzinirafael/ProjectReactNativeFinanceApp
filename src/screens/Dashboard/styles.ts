@@ -2,8 +2,9 @@ import styled from 'styled-components/native';
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import {Feather} from '@expo/vector-icons';
 import theme from '../../global/styles/theme';
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
-export const Container = styled.SafeAreaView                                                         `
+export const Container = styled.SafeAreaView` 
     flex: 1;
     background-color: ${({ theme }) => theme.colors.shape};
 `
@@ -20,7 +21,7 @@ export const UserWarapper = styled.View`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: ${RFValue(28)}px;
+    margin-top: ${getStatusBarHeight() + RFValue(28)}px;
 `
 
 export const UserInfo = styled.View`
@@ -59,5 +60,8 @@ export const IconPower = styled(Feather)`
 ` 
 
 export const HighLightCards = styled.ScrollView`    
-
+    margin-top: ${RFValue(24)}px;
+    width: 100%;
+    position: absolute;
+    margin-top: ${RFPercentage(20)}px;
 `

@@ -8,17 +8,34 @@ import {
     LastTransactionDate,
     Footer
 } from './style';
+interface PropsCard {
+    type: 'up' | 'down' | 'total',
+    title: string,
+    amount: string,
+    lastTransaction: string,
+}
 
-export function HighLightCard(){
+const icon = {
+    up: "arrow-up-circle",
+    down: "arrow-down-circle",
+    total: "dollar-sign"
+}
+
+export function HighLightCard({ 
+    type,
+    title,
+     amount,
+      lastTransaction}
+       : PropsCard){
     return(
-        <Container>
+        <Container type={type}>
             <Header>
-                <Title>Entradas</Title>
-                <Icon name="arrow-up-circle"></Icon>
+                <Title type={type}>{title}</Title>
+                <Icon name={icon[type]} type={type}></Icon>
             </Header>
             <Footer>    
-                <Amount>R$ 17.400,00</Amount>
-                <LastTransactionDate>Última entrada dia 13 de abril</LastTransactionDate>
+                <Amount type={type}>{amount}</Amount>
+                <LastTransactionDate type={type}>{lastTransaction}</LastTransactionDate>
             </Footer>
         </Container>
     )
