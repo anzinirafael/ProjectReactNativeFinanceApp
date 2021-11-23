@@ -4,19 +4,22 @@ import {
     Header,
     Title,
     Icon,
-    Values,
-    DateValues
+    Amount,
+    LastTransactionDate,
+    Footer
 } from './style';
 
 export function HighLightCard(){
     return(
         <Container>
             <Header>
-                <Title></Title>
+                <Title>Entradas</Title>
                 <Icon name="arrow-up-circle"></Icon>
             </Header>
-            <Values></Values>
-            <DateValues></DateValues>
+            <Footer>    
+                <Amount>R$ 17.400,00</Amount>
+                <LastTransactionDate>Última entrada dia 13 de abril</LastTransactionDate>
+            </Footer>
         </Container>
     )
 }

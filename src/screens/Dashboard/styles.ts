@@ -3,9 +3,9 @@ import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import {Feather} from '@expo/vector-icons';
 import theme from '../../global/styles/theme';
 
-export const Container = styled.SafeAreaView`
+export const Container = styled.SafeAreaView                                                         `
     flex: 1;
-    background-color: ${({ theme }) => theme.colors.background};
+    background-color: ${({ theme }) => theme.colors.shape};
 `
 
 export const Header = styled.View`
@@ -20,7 +20,7 @@ export const UserWarapper = styled.View`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: ${RFValue(58)}px;
+    margin-top: ${RFValue(28)}px;
 `
 
 export const UserInfo = styled.View`
@@ -40,18 +40,24 @@ export const User = styled.View`
 
 export const UserGreetings = styled.Text`
     color: ${({theme}) => theme.colors.shape};
-    font-size: ${RFValue(14)}px;
+    font-size: ${RFValue(18)}px;
     font-family: ${({theme}) => theme.fonts.regular};
+    
 
 `
 
 export const UserName = styled.Text`
     color: ${({theme}) => theme.colors.shape};
-    font-size: ${RFValue(14)}px;
+    font-size: ${RFValue(18)}px;
     font-family: ${({theme}) => theme.fonts.bold};
+    margin-top: ${RFValue(-5)}px;;
 `
 
 export const IconPower = styled(Feather)`
     font-size: ${RFValue(24)}px;
     color: ${({ theme }) => theme.colors.secondary};
 ` 
+
+export const HighLightCards = styled.ScrollView`    
+
+`

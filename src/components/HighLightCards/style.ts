@@ -7,34 +7,44 @@ export const Container = styled.View`
     width: ${RFValue(300)}px;
     height: ${RFValue(200)}px;
     background-color: ${({theme}) => theme.colors.shape};
+    margin-top: ${RFValue(26)}px;
+    margin-right: ${RFValue(16)}px;
+    border-radius: ${RFValue(5)}px;
+    padding: ${RFValue(19)}px ${RFValue(23)}px;
+    padding-bottom: ${RFValue(42)}px;
 `
 
 export const Header = styled.View`
     flex-direction: row;
     justify-content: space-between;
-    margin: 0 ${RFValue(19)}px ${RFValue(47)}px ${RFValue(47)}px;
 `
 
 export const Title = styled.Text`
     font-family: ${({theme}) => theme.fonts.regular};
     font-size: ${RFValue(14)}px;
-    color: ${({theme}) => theme.colors.text};
+    color: ${({theme}) => theme.colors.title};
 `
 
 export const Icon = styled(Feather)`
     font-size: ${RFValue(40)}px;
+    color: ${({theme}) => theme.colors.success};
 `
 
-export const Values = styled.Text`
-    font-family: ${({theme}) => theme.fonts.bold};
+export const Footer = styled.View`
+    margin-top: ${RFValue(38)}px;
+
+`
+
+export const Amount = styled.Text`
+    font-family: ${({theme}) => theme.fonts.medium};
     color: ${({theme}) => theme.colors.title};
     font-size: ${RFValue(32)}px;
-    margin: 0 ${RFValue(56)}px ${RFValue(47)}px ${RFValue(47)}px;
+    margin-bottom: ${RFValue(0)}px;
 `
 
-export const DateValues = styled.Text`
+export const LastTransactionDate = styled.Text`
     font-family: ${({theme}) => theme.fonts.regular};
     color: ${({theme}) => theme.colors.text};   
     font-size: ${RFValue(12)}px;
-    margin: 0 ${RFValue(15)}px ${RFValue(47)}px ${RFValue(47)}px;
+    margin-top: ${RFValue(0)}px;
 `
