@@ -63,7 +63,7 @@ export const HighLightCards = styled.ScrollView`
     margin-top: ${RFValue(24)}px;
     width: 100%;
     position: absolute;
-    margin-top: ${RFPercentage(20)}px;
+    margin-top: ${RFPercentage(19)}px;
 `
 
 export const Transactions = styled.View`
@@ -76,4 +76,9 @@ export const Transactions = styled.View`
 export const Title = styled.Text`
     font-family: ${({theme}) => theme.fonts.regular};
     font-size: ${RFValue(18)}px;
+    margin-bottom: ${RFValue(16)}px;
+`
+
+export const ListTransactions = styled.FlatList`
+    
 `

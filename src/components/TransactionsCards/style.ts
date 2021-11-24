@@ -1,13 +1,17 @@
-import styled from 'styled-components/native';
+import styled, {css} from 'styled-components/native';
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import {Feather} from '@expo/vector-icons';
 
+interface Props{
+    type: 'up' | 'down'
+}
 
 export const Container = styled.View`
     width: 100%;
     padding: ${RFValue(17)}px ${RFValue(24)}px;
     border-radius: ${RFValue(5)}px;
-`
+    margin-bottom: ${RFValue(16)}px;
+`   
 
 export const Header = styled.View`
  
@@ -22,7 +26,7 @@ export const Description = styled.Text`
 export const Amount = styled.Text`
     font-family: ${({theme}) => theme.fonts.regular};
     font-size: ${RFValue(20)}px;
-    color: ${({theme}) => theme.colors.success};
+    color: ${({theme, type}) => type === "up" ? theme.colors.success : theme.colors.attention};
     margin-bottom: ${RFValue(20)}px;
     margin-top: ${RFValue(2)}px;
 `

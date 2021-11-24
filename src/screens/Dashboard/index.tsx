@@ -13,8 +13,11 @@ import {
     IconPower,
     HighLightCards,
     Transactions,
-    Title
+    Title,
+    ListTransactions
  } from './styles';
+
+//    title, amount, category, date
 
 export function Dashboard(){
     return(
@@ -58,7 +61,10 @@ export function Dashboard(){
             </HighLightCards>
             <Transactions>
                 <Title>Listagem</Title>
-                <TransactionsCards />
+                <TransactionsCards title="Desenvolvimento de site" amount="R$ 12.000,00"
+                category={{ icon: 'dollar-sign', name: 'Vendas'} }date="13/04/2020" type="up"/>
+                <TransactionsCards title="Hamburgueria Pizzy" amount="- R$ 59,00"
+                 category={{ icon: '', name: 'Alimentação'}}  date="10/04/2020" type="down"/>
             </Transactions>
         </Container>
     );
