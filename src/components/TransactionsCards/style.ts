@@ -23,7 +23,7 @@ export const Description = styled.Text`
     color: ${({theme}) => theme.colors.title};
 `
 
-export const Amount = styled.Text`
+export const Amount = styled.Text<Props>`
     font-family: ${({theme}) => theme.fonts.regular};
     font-size: ${RFValue(20)}px;
     color: ${({theme, type}) => type === "up" ? theme.colors.success : theme.colors.attention};

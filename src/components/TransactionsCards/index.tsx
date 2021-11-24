@@ -16,33 +16,32 @@ interface Category{
     name: string,
 }
 
-interface Props{
-    title: string,
+interface Data{title: string,
     amount: string,
     category: Category,
     date: string,
     type: "up" | "down"
 }
 
+interface Props{
+data: Data
+}
+
 export function TransactionsCards( {
-    title, 
-    amount, 
-    category, 
-    date,
-    type
+    data
 } : Props ){
     return(
         <Container>
             <Header>
-                <Description>{title}</Description>
-                <Amount type={type}>{amount}</Amount>
+                <Description>{data.title}</Description>
+                <Amount type={data.type}>{data.amount}</Amount>
             </Header>
             <Footer>
                 <Category>
-                    <Icon name={category.icon}/>
-                    <CategoryName>{category.name}</CategoryName>
+                    <Icon name={data.category.icon}/>
+                    <CategoryName>{data.category.name}</CategoryName>
                 </Category>
-                <DateTransaction>{date}</DateTransaction>
+                <DateTransaction>{data.date}</DateTransaction>
             </Footer>
         </Container>
     )
