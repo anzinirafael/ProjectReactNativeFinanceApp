@@ -20,7 +20,7 @@ interface Data{title: string,
     amount: string,
     category: Category,
     date: string,
-    type: "up" | "down"
+    type: "positive" | "negative"
 }
 
 interface Props{

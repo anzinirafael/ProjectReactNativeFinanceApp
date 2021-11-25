@@ -27,24 +27,17 @@ const data = [{
 },
 {
     title:"Hamburgueria Pizzy",
-    amount:"- R$ 59,00",
+    amount:"R$ 59,00",
     category:{icon: '', name: 'Alimentação'},
     date : "10/04/2020",
     type: "down"
 },
 {
-title:"Desenvolvimento de site",
-amount:"R$ 12.000,00",
-category:{icon: 'dollar-sign', name: 'Vendas'},
-date : "13/04/2020",
-type: "up"
-},
-{
-title:"Hamburgueria Pizzy",
-amount:"- R$ 59,00",
-category:{icon: '', name: 'Alimentação'},
+title:"Aluguel do apartamento",
+amount:"R$ 1.200,00",
+category:{icon: '', name: 'Casa'},
 date : "10/04/2020",
-type: "down"
+type: "negative"
 }]
 export function Dashboard(  ){
     return (
