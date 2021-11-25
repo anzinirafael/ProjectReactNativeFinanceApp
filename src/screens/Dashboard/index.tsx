@@ -1,7 +1,7 @@
 import React from 'react';
 import { getBottomSpace } from 'react-native-iphone-x-helper';
 import { HighLightCard } from '../../components/HighLightCards';
-import { TransactionsCards } from '../../components/TransactionsCards';
+import { TransactionsCards, DataProps } from '../../components/TransactionsCards';
 import {
     Container,
     Header,
@@ -18,28 +18,37 @@ import {
     ListTransactions
 } from './styles';
 
-const data = [{
-    title:"Desenvolvimento de site",
-    amount:"R$ 12.000,00",
-    category:{icon: 'dollar-sign', name: 'Vendas'},
-    date : "13/04/2020",
-    type: "up"
-},
-{
-    title:"Hamburgueria Pizzy",
-    amount:"R$ 59,00",
-    category:{icon: '', name: 'Alimentação'},
-    date : "10/04/2020",
-    type: "down"
-},
-{
-title:"Aluguel do apartamento",
-amount:"R$ 1.200,00",
-category:{icon: '', name: 'Casa'},
-date : "10/04/2020",
-type: "negative"
-}]
-export function Dashboard(  ){
+
+
+export interface DataIdProps extends DataProps{
+    id: string;
+}
+
+export function Dashboard(){
+    const data: DataIdProps[] = [{
+        id: '1',
+        title:"Desenvolvimento de site",
+        amount:"R$ 12.000,00",
+        category:{icon: 'dollar-sign', name: 'Vendas'},
+        date : "13/04/2020",
+        type: "positive"
+    },
+    {
+        id: '2',
+        title:"Hamburgueria Pizzy",
+        amount:"R$ 59,00",
+        category:{icon: 'coffee', name: 'Alimentação'},
+        date : "10/04/2020",
+        type: "negative"
+    },
+    {
+        id: '3',
+        title:"Aluguel do apartamento",
+        amount:"R$ 1.200,00",
+        category:{icon: 'shopping-bag', name: 'Casa'},
+        date : "10/04/2020",
+        type: "negative"
+    }]
     return (
         <Container>
             <Header>
@@ -82,9 +91,10 @@ export function Dashboard(  ){
             <Transactions>
                 <Title>Listagem</Title>
                 <ListTransactions data={data}
+                    keyExtractor={item => item.id}
                     renderItem={({ item }) => <TransactionsCards data={item} />}    
                     showsVerticalScrollIndicator={false}
-                    contentContainerStyle={{paddingBottom: getBottomSpace() }}
+                    contentContainerStyle={{paddingBottom: getBottomSpace()}}
                 />
                 
             </Transactions>

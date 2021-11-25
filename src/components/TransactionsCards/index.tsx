@@ -16,7 +16,7 @@ interface Category{
     name: string,
 }
 
-interface Data{title: string,
+export interface DataProps{title: string,
     amount: string,
     category: Category,
     date: string,
@@ -24,7 +24,7 @@ interface Data{title: string,
 }
 
 interface Props{
-data: Data
+data: DataProps
 }
 
 export function TransactionsCards( {
@@ -34,7 +34,8 @@ export function TransactionsCards( {
         <Container>
             <Header>
                 <Description>{data.title}</Description>
-                <Amount type={data.type}>{data.amount}</Amount>
+                <Amount type={data.type}>{
+                data.type === 'negative' ? '- ' + data.amount : data.amount}</Amount>
             </Header>
             <Footer>
                 <Category>
